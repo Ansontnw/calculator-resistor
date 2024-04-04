@@ -1,6 +1,7 @@
 import streamlit as st
 
-st.title("Hello, Wellcome to my Resistor Calculator👋")
+st.title("Hello, Welcome to Resistor Calculator👋")
+st.write("*This Project Is Create By Group 4*")
 st.write("This is an app that can help us calculate the resistance value")
 
 st.header("Connection Type")
