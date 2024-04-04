@@ -13,39 +13,29 @@
 # limitations under the License.
 
 import streamlit as st
-from streamlit.logger import get_logger
 
-LOGGER = get_logger(__name__)
+st.title("Hello, Wellcome to my Resistor Calculator👋")
+st.write("This is an app that can help us calculate the resistance value")
 
+st.header("Connection Type")
+connectionType = st.radio("Please select the type of conncetion", ("Series", "Parallel"))
+if connectionType:
+    st.write("You selected {} connection.".format(connectionType))
 
-def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
+if connectionType == "Series":
+     n = st.number_input("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1)
+     resistors = []
+     for i in range(n):
+            r = st.number_input(f"Enter resistance {i + 1} (in ohms):")
+            resistors.append(r)
+     total_resistance = sum(resistors)
+     st.write("Totol value resistance in series is {:.2f} ohms.".format(total_resistance))
 
-    st.write("# Welcome to Streamlit! 👋")
-
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
-
-
-if __name__ == "__main__":
-    run()
+elif connectionType == "Parallel":
+     n = st.number_input("Enter the number of resistors in parallel:", mi_value = 1, step = 1, value = 1)
+     resistors = []
+     for i in range(n):
+          r = st.number_input(f"Enter resistance {i + 1} (in ohms):")
+          resistors.append(r)
+     total_resistance = 1 / sum(1 / r for r in resistors)
+     st.write("Totol value resistance in series is {:.2f} ohms.".format(total_resistance))
