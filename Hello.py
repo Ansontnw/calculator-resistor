@@ -10,6 +10,7 @@ connectionType = st.radio("Please select the type of conncetion", ("Series", "Pa
 if connectionType:
     st.write("You selected {} connection.".format(connectionType))
 
+st.header("Calculating Resistance")
 if connectionType == "Series":
      n = st.slider("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1, max_value = 50)
      resistors = []
