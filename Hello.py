@@ -37,5 +37,5 @@ elif connectionType == "Parallel":
      for i in range(n):
           r = st.number_input(f"Enter resistance {i + 1} (in ohms):")
           resistors.append(r)
-     total_resistance = 1 / sum(1 / r for r in resistors)
+     total_resistance = 1 / sum(1/ r for r in resistors)
      st.write("Total value resistance in series is {:.2f} ohms.".format(total_resistance))
