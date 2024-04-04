@@ -9,7 +9,7 @@ if connectionType:
     st.write("You selected {} connection.".format(connectionType))
 
 if connectionType == "Series":
-     n = st.slider_input("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1)
+     n = st.slider("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1)
      resistors = []
      for i in range(n):
             r = st.number_input(f"Enter resistance {i + 1} (in ohms):")
