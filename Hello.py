@@ -32,10 +32,10 @@ if connectionType == "Series":
      st.write("Totol value resistance in series is {:.2f} ohms.".format(total_resistance))
 
 elif connectionType == "Parallel":
-     n = st.number_input("Enter the number of resistors in parallel:", mi_value = 1, step = 1, value = 1)
+     n = st.number_input("Enter the number of resistors in parallel:", min_value = 1, step = 1, value = 1)
      resistors = []
      for i in range(n):
           r = st.number_input(f"Enter resistance {i + 1} (in ohms):")
           resistors.append(r)
      total_resistance = 1 / sum(1 / r for r in resistors)
-     st.write("Totol value resistance in series is {:.2f} ohms.".format(total_resistance))
+     st.write("Total value resistance in series is {:.2f} ohms.".format(total_resistance))
