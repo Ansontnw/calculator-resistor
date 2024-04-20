@@ -84,7 +84,7 @@ ResVal = (Val1 * 10 + Val2) * Val3
 
 st.write(f"<h1>Resistance Value: {ResVal} ohms, Tolerance: {Val4}</h1>", unsafe_allow_html=True)
 
-st.image("image", caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.image("path/to/your/image.png", caption="Your Image Caption", width=300)
 #elif connectionType == "Parallel":
 #     n = st.number_input("Enter the number of resistors in parallel:", min_value = 1, step = 1, value = 1)
 #     resistors = []
