@@ -16,13 +16,13 @@ if connectionType:
 st.header("Calculating Resistance")
 
 if connectionType == "Series":
-     numRes = st.number_input("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1, max_value = 50)
+     numRes = st.number_input("Enter the number of resistors in series:", min_value = 1, step = 1, value = 1)
      resistors = []
      for i in range(numRes):
             valRes = st.number_input(f"Enter resistance {i + 1} (in ohms):")
             resistors.append(valRes)
      total_resistance = sum(resistors)
-     st.header("Totol values resistance in series is {:.2f} Ω.".format(total_resistance))
+     st.subheader("Totol values resistance in series is {:.2f} Ω.".format(total_resistance))
 
 elif connectionType == "Parallel":
      numRes = st.number_input("Enter the number of resistors in parallel:", min_value=1, step=1, value=1)
@@ -34,7 +34,7 @@ elif connectionType == "Parallel":
          st.write("If resistor values is zero. Cannot calculate parallel resistance.")
      else:
          total_resistance = 1 / sum(1 / valRes for valRes in resistors)
-         st.header("Total value resistance in parallel is {:.2f} Ω.".format(total_resistance))
+         st.subheader("Total value resistance in parallel is {:.2f} Ω.".format(total_resistance))
 
 st.title("Resistor Calculator")
 
